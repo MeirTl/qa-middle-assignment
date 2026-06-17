@@ -430,3 +430,25 @@ The Postman collection creates its own booking data, stores the generated bookin
 * Add accessibility checks for the tested UI pages.
 * Replace known-issue assertions after the corresponding defects are fixed.
 
+
+## Continuous Integration
+
+GitHub Actions automatically runs the Newman API collection and Playwright E2E suite on every push and pull request to `main`.
+
+The Playwright HTML report and test artifacts are uploaded after each workflow run.
+
+## Running Tests with Docker
+
+Build the test image:
+
+```bash
+docker build -t qa-middle-assignment:latest .
+```
+
+Run the complete API and E2E test suite:
+
+```bash
+docker run --rm --init --ipc=host qa-middle-assignment:latest
+```
+
+The container installs dependencies from `package-lock.json` and sequentially executes the Newman and Playwright test suites.
