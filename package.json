@@ -1,7 +1,7 @@
 {
-  "name": "test",
+  "name": "qa-middle-assignment",
   "version": "1.0.0",
-  "description": "",
+  "description": "QA assignment covering API, manual UI, Playwright E2E, SQL, MongoDB, and process diagrams",
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
@@ -12,7 +12,7 @@
     "report": "playwright show-report"
   },
   "keywords": [],
-  "author": "",
+  "author": "Meirzhan Tleubaev",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
