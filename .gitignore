@@ -6,3 +6,4 @@ blob-report/
 npm-audit.json
 *.log
 .DS_Store
+.vscode

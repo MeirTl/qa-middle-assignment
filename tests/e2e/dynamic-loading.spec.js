@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const { DynamicLoadingPage,} = require('../pages/DynamicLoadingPage');
+const { DynamicLoadingPage } = require('../pages/DynamicLoadingPage');
 
 test('reveals hidden content after dynamic loading', async ({ page }) => {
   const dynamicPage = new DynamicLoadingPage(page);

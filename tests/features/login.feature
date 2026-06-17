@@ -19,10 +19,10 @@ And the user enters password "<password>"
 And the user submits the login form
 Then the message "<message>" should be displayed
 
-```
+
 Examples:
   | username     | password             | message                    |
   | unknown-user | SuperSecretPassword! | Your username is invalid!  |
   | tomsmith     | wrong-password        | Your password is invalid!  |
   |              |                       | Your username is invalid!  |
-```
+

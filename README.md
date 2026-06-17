@@ -9,33 +9,42 @@ A practical QA project covering REST API testing, manual UI testing, Playwright 
 | [Restful Booker](https://restful-booker.herokuapp.com) | REST API testing          |
 | [The Internet](https://the-internet.herokuapp.com)     | Manual UI and E2E testing |
 
+
 ## Project Structure
 
 ```text
 .
-├── README.md
-├── package.json
-├── playwright.config.js
+├── .github/
+│   └── workflows/
+│       └── qa-tests.yml
+├── diagrams/
+│   ├── booking-process.md
+│   ├── booking-sequence.md
+│   └── booking-state-transitions.md
+├── nosql/
+│   └── mongodb-answer.md
 ├── postman/
 │   ├── collection.json
 │   └── environment.json
+├── sql/
+│   └── queries.sql
 ├── test-cases/
-│   ├── ui-test-cases.md
-│   └── evidence/
+│   ├── evidence/
+│   └── ui-test-cases.md
 ├── tests/
 │   ├── e2e/
 │   ├── features/
 │   ├── fixtures/
 │   └── pages/
-├── sql/
-│   └── queries.sql
-├── nosql/
-│   └── mongodb-answer.md
-└── diagrams/
-    ├── booking-process.md
-    ├── booking-sequence.md
-    └── booking-state-transitions.md
+├── .dockerignore
+├── .gitignore
+├── Dockerfile
+├── package.json
+├── package-lock.json
+├── playwright.config.js
+└── README.md
 ```
+
 
 ## Coverage
 
@@ -425,7 +434,6 @@ The Postman collection creates its own booking data, stores the generated bookin
 * Add performance baselines for critical endpoints.
 * Execute SQL queries against a disposable PostgreSQL test container.
 * Add automated MongoDB validation against seeded test data.
-* Add Docker support for fully isolated execution.
 * Extend payment, cancellation, refund, and notification scenarios.
 * Add accessibility checks for the tested UI pages.
 * Replace known-issue assertions after the corresponding defects are fixed.
