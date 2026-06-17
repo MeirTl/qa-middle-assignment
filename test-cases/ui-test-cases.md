@@ -172,11 +172,11 @@ This may:
 
 #### Error page
 
-![Internal Server Error after submitting upload without a file](../evidence/BUG-UI-001-page.png)
+![Internal Server Error after submitting upload without a file](evidence/BUG-UI-001-page.png)
 
 #### Network response
 
-![POST upload request returned HTTP 500](../evidence/BUG-UI-001-network.png)
+![POST upload request returned HTTP 500](evidence/BUG-UI-001-network.png)
 
 
 ---
