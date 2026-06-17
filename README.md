@@ -430,5 +430,3 @@ The Postman collection creates its own booking data, stores the generated bookin
 * Add accessibility checks for the tested UI pages.
 * Replace known-issue assertions after the corresponding defects are fixed.
 
-```
-```
