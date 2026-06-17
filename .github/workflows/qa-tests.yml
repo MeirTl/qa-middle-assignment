@@ -1,61 +1,59 @@
 name: QA Tests
 
 on:
-push:
-branches:
-- main
-pull_request:
-branches:
-- main
-workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
 
 permissions:
-contents: read
+  contents: read
 
 concurrency:
-group: qa-tests-${{ github.ref }}
-cancel-in-progress: true
+  group: qa-tests-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-automated-tests:
-name: API and Playwright tests
-runs-on: ubuntu-latest
-timeout-minutes: 20
+  automated-tests:
+    name: API and Playwright tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
 
-```
-env:
-  CI: "true"
+    env:
+      CI: "true"
 
-steps:
-  - name: Checkout repository
-    uses: actions/checkout@v5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-  - name: Set up Node.js
-    uses: actions/setup-node@v6
-    with:
-      node-version: 20
-      cache: npm
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
 
-  - name: Install project dependencies
-    run: npm ci
+      - name: Install project dependencies
+        run: npm ci
 
-  - name: Install Playwright Chromium
-    run: npx playwright install --with-deps chromium
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
 
-  - name: Run Newman API tests
-    run: npm run test:api
+      - name: Run Newman API tests
+        run: npm run test:api
 
-  - name: Run Playwright E2E tests
-    run: npm run test:e2e
+      - name: Run Playwright E2E tests
+        run: npm run test:e2e
 
-  - name: Upload Playwright artifacts
-    if: always()
-    uses: actions/upload-artifact@v5
-    with:
-      name: playwright-artifacts
-      path: |
-        playwright-report/
-        test-results/
-      if-no-files-found: ignore
-      retention-days: 14
-```
+      - name: Upload Playwright artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-artifacts
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+          retention-days: 14
